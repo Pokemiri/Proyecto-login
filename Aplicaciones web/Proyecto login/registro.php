@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imagenes/Pokemiri.png" type="image/x-icon">
     <title>Registro de usuarios</title>
 </head>
 <body>
     <style>
+        html, body, *{
+            cursor: none !important;
+        }
+        input, textarea, select, [contenteditable="true"], button {
+            cursor: auto !important;
+        }
         :root{
             --color1: lime;
             --color2: violet;
@@ -37,6 +44,16 @@
             margin-bottom: 30px;
             color: white;
         }
+        body {cursor: none;}
+        .custom-cursor {
+            position: fixed;
+            pointer-events: none;
+            width: 48px;
+            height: 48px;
+            transform: translate(-50%, -50%);
+            z-index: 2147483647;
+            display: none;
+        }
     </style>
     <div class="login-container">
     <h1>Registro</h1>
@@ -49,5 +66,22 @@
     </form>
     <p>¿Ya tienes cuenta? <a href="login.php">Iniciar sesion aqui</a></p>
     </div>
+    <img id="customCursor" class="custom-cursor" src="Imagenes/Pikchu.gif" alt="cursor">
+<script>
+     const customCursor = document.getElementById('customCursor');
+     function isTouch(){ return('ontouchstart' in window)||(navigator.maxTouchPoints>0)||(navigator.msMaxTouchPoints>0);}
+     if (isTouch()){
+        customCursor.style.display = 'none';
+        document.body.style.cursor = 'auto';
+        } else {
+            document.addEventListener('mousemove', e => {
+                customCursor.style.display = 'block';
+                customCursor.style.left = e.clientX + 'px';
+                customCursor.style.top = e.clientY + 'px';
+            });
+            document.addEventListener('mouseenter', () => customCursor.style.display = 'block');
+            document.addEventListener('mouseleave', () => customCursor.style.display = 'none');
+     }   
+</script>
 </body>
 </html>
