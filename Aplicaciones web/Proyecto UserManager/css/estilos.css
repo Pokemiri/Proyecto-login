@@ -1,0 +1,224 @@
+html, body, *{
+    cursor: none !important;
+}
+input, textarea, select, [contenteditable="true"], button {
+    /* Inputs should keep native cursor for accessibility (match Proyecto login+MySQL) */
+    cursor: auto !important;
+    caret-color: white;
+}
+.custom-cursor {
+    position: fixed;
+    pointer-events: none;
+    width: 48px;
+    height: 48px;
+    transform: translate(-50%, -50%);
+    z-index: 2147483647;
+    display: none;
+}
+body.login-registro {
+    font-family: Arial, Helvetica, sans-serif;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    flex-direction: column;
+    position: relative;   
+    background: linear-gradient(90deg, deeppink, darkblue);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.login-container {
+    background: rgba(30, 30, 121, 0.6);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    color: white;
+}
+.login-container h1 {
+    margin-bottom: 30px;
+    color: white;
+}
+a[href$="login.php"],
+a[href$="registro.php"],
+a#login-link,
+a.register-link {
+    color: deeppink !important;
+}
+.registro p {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    text-align: center;
+    line-height: 1.6;
+}
+.form-container {
+    background: rgba(30, 30, 121, 0.6);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    color: white;
+}
+.form-container h1 {
+    margin-bottom: 30px;
+    color: white;
+}
+body.bienvenida {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;   
+    background: linear-gradient(90deg, deeppink, darkblue);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.bienvenida h1 {
+    font-size: clamp(2rem, 6vw, 4rem);
+    text-align: center;
+}
+#user-panel{
+    position: fixed;
+    left: 16px;
+    bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(0,0,0,0.45);
+    padding: 8px 10px;
+    border-radius: 999px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+    z-index: 2147483647;
+    color: #fff;
+    backdrop-filter: blur(4px);
+    pointer-events: auto;
+}
+#panel-username { font-weight: 600; font-size: 14px; color: #fff; white-space: nowrap; }
+a[href$="logout.php"]{
+    color: darkblue !important;
+}
+a[href$="index.php"],
+a[href$="list.php"],
+a#index-link,
+a.list-link {
+    color: darkblue !important;
+}
+:root{
+    --color1: fuchsia;
+    --color2: darkblue;
+}
+.btn-crear, .btn-edit, .btn-delete, .btn-crud { 
+    padding: 8px 16px;
+    border: none; 
+    border-radius: 6px; 
+    text-decoration: none; 
+    font-weight: bold; 
+    font-size: 14px; 
+    margin: 4px; 
+    display: inline-block; 
+    transition: color 0.3s ease, border-color 0.3s ease; 
+    color: black;
+    background-color: transparent;
+}
+.btn:hover { 
+    opacity: 0.85; 
+}
+.form-container-list {
+    background: rgba(30, 30, 121, 0.6);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px;
+    width: 95%;
+    color: white;
+}
+.form-container-list h1 {
+    margin-bottom: 30px;
+    color: white;
+}
+.lista {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+}
+table.list th, table.list td {
+    padding: 12px;
+    text-align: left;
+    vertical-align: middle;
+    border-bottom: 1px solid #ddd;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    word-break: break-word;
+    white-space: normal;
+}
+table.list th {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+th:nth-child(2), td:nth-child(2) {
+    width: 20%;
+}
+td.acciones {
+    text-align: center;
+}
+body.list {
+    font-family: 'Segoe UI', sans-serif;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    flex-direction: column;
+    position: relative;   
+    background: linear-gradient(90deg, deeppink, darkblue);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    line-height: 1.5;
+}
+#volver{ 
+    position: fixed;
+    left: 16px;
+    bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(0,0,0,0.45);
+    padding: 8px 10px;
+    border-radius: 999px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+    z-index: 2147483647;
+    color: #fff;
+    backdrop-filter: blur(4px);
+    pointer-events: auto;
+    font-weight: 600; 
+    font-size: 14px; 
+    color: #fff; 
+    white-space: nowrap; 
+}
+#panel-username { font-weight: 600; font-size: 14px; color: #fff; white-space: nowrap; }
+a[href$="bienvenida.php"]{
+    color: darkblue !important;
+}
+a[href$="list.php"]{
+    color: black !important;
+}
