@@ -8,9 +8,10 @@ CREATE TABLE usuarios (
 );
 CREATE TABLE perfil (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    usuario_id VARCHAR(50) NOT NULL UNIQUE,
+    usuario_id INT NOT NULL,
     nombre VARCHAR(50) NOT NULL,
     email VARCHAR(100) NOT NULL,
     edad INT NOT NULL,
-    rol ENUM('admin','user') NOT NULL
+    rol ENUM('admin','user') NOT NULL DEFAULT 'user',
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
 );
