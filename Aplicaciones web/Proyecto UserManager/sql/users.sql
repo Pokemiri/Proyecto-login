@@ -4,7 +4,7 @@ USE usermanager_loginYregistro;
 CREATE TABLE usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
     usuario VARCHAR(50) NOT NULL UNIQUE,
-    contrasena VARCHAR(255) NOT NULL,
+    contrasena VARCHAR(255) NOT NULL
 );
 CREATE TABLE perfil (
     id INT AUTO_INCREMENT PRIMARY KEY,
