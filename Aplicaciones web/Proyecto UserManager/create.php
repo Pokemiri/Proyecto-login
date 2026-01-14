@@ -22,7 +22,7 @@ if ($_POST) {
 
     if (isset($edad)&& $edad < 18) {
     echo "<h1>Error: Debes tener al menos 18 años para registrarte ❌</h1>";
-    echo "<p><a href='registro.php'>Volver al registro</a></p>";
+    echo "<p><a href='create.php'>Volver a crear el usuario</a></p>";
     exit();
     }
     $usuarios_admin_autorizados = ["AdminPokemiri@gmail.com"];
